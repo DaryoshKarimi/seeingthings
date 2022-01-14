@@ -1,0 +1,215 @@
+<!doctype html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon1.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Seeing Things™</title>
+<style>
+
+body { 
+  margin: 0px 0px;
+  background-color: white;
+}
+
+
+.clock {
+  display: none;
+  padding-top: 15px;
+  left: 94%;
+  position: fixed;
+  font-family: arial narrow;
+  font-size: 16px;
+  width: calc(100% - 5px);
+
+}
+ 
+.heading {
+  font-family: GT-Alpina-Condensed-Thin-Trial;
+  font-size: 80px;
+  text-align: center;
+  position: relative;
+  top: 5px;
+  margin-bottom: 10px;
+  letter-spacing: -4px;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.heading:hover {
+  cursor: cell;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.heading:hover + #video {
+  display: block;
+}
+
+.credits {
+  font-family: arial narrow;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.firstcredits {
+  font-family: arial narrow;
+  font-size: 12px;
+  top: 13%;
+  text-align: center;
+}
+
+a:visited {
+  color: black;
+}
+
+a:link {
+  color: black;
+}
+
+.firstcredits:hover {
+  cursor: help;
+}
+
+#video {
+  width: 45%;
+  position: absolute;
+  top: 0px; left 0px;
+  margin-top: 70px;
+  display: none;
+}
+
+
+.about {
+  font-family: arial narrow;
+  font-size: 32px;
+  text-align: left;
+  top: 490px;
+  position: absolute;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+.firstcredits:hover + .about {
+  display: block;
+  background: white;
+  z-index: 1;
+}
+
+
+#asterix {
+  font-family: times;
+  bottom: 0;
+  position: relative;
+  top: 527px;
+  font-size: 22px;
+  text-align: center;
+}
+
+#asterix {
+  cursor: crosshair;
+}
+
+#leftcopyright {
+  color: white;
+  font-family: arial narrow;
+  font-size: 12px;
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  float: left;
+}
+
+#rightcopyright {
+  color: white;
+  font-family: arial narrow;
+  font-size: 12px;
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  float: right;
+}
+
+#asterix:hover + #leftcopyright {
+  display: block;
+  content: id(#rotate);
+}
+
+#asterix:hover ~ #rightcopyright {
+  display: block;
+}
+
+.bg {
+  background-color: white;
+}
+
+.bghovered {
+  background-color: black;
+}
+
+#rotate {
+  width: 80%;
+  position: absolute;
+  top: 0px; 
+  margin-top: 70px;
+  left: 15%;
+}
+
+
+
+@font-face { font-family: Arial Narrow; src: url('fonts/Arial Narrow.ttf'); } 
+@font-face { font-family: Junicode-RegularCondensed; src: url('fonts/Junicode-RegularCondensed.ttf'); } 
+@font-face { font-family: GT-Alpina-Condensed-Thin-Trial; src: url('fonts/GT-Alpina-Condensed-Thin-Trial.otf'); } 
+
+ 
+</style>
+
+
+
+  </head>
+  <body>
+
+<div class='clock' id="clock"></div>
+
+<div onmouseover="document.getElementById('video').play()" onmouseout="document.getElementById('video').pause()" class='heading'>Seeing Things</div>
+
+<video id="video" autoplay="true"><source src="images/Seeing Things.mp4" type="video/mp4">
+    </video>
+
+
+<div class='firstcredits'>Project title: Seeing Things&nbsp;&nbsp;&nbsp;Code development: Harry Van Ness&nbsp;&nbsp;&nbsp;Music: Daryosh Karimi</div> 
+
+<div class='about'>‘Seeing Things’ is a collaborative project between code developer Harry Van Ness and sound designer Daryosh Karimi. It aims to use a class of machine learning, called generative adversarial networks (GAN), an idea originally designed by Ian Goodfellow. It involves two neural networks, the ‘Creator’ and the ‘Discriminator’. They duel one another and by fooling each other on a random basis, they visualise new imagery, redefining the word ‘real’.</div>
+
+<div class='credits'>Original code developed at Google by <a class='credits' href="https://arxiv.org/abs/1809.11096">Brock et al.</a> (2018)</div>
+
+<div onmouseover="document.getElementById('rotate').play()" onmouseout="document.getElementById('rotate').pause()" id='asterix'>*</div>
+
+
+<div id='leftcopyright'>Code partially and music fully copyrighted by Harry Van Ness & Daryosh Karimi © 2022<br>(Full proposal available on request)<div>
+
+<video id="rotate" autoplay="autoplay" loop="true"><source src="images/asterix.mp4" type="video/mp4"></video> 
+
+
+<div id='rightcopyright'><div>
+
+
+
+<script>
+var div = document.getElementById('asterix');
+var bg = document.body;
+
+div.onmouseover = function() {
+	bg.className = 'bghovered';
+}
+
+div.onmouseout = function() {
+	bg.className = '';
+}
+</script>
+
+
