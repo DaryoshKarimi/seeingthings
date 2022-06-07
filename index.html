@@ -92,11 +92,10 @@ a:link {
   font-family: arial narrow;
   font-size: 32px;
   text-align: left;
-  top: 490px;
+  bottom: 20px;
   position: absolute;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 5px;
   display: none;
 }
 
@@ -237,11 +236,11 @@ a:link {
 
 <div class='clock' id="clock"></div>
 
-<div onmouseover="document.getElementById('video').play()" onmouseout="document.getElementById('video').pause()" class='container'>
+<div onmouseover="document.getElementById('video').style.opacity = 1" onmouseout="document.getElementById('video').style.opacity = 0" class='container'>
 <a class='heading'>Seeing Things</a>
 </div>
 
-<video id="video" autoplay="true"><source src="images/Seeing Things.mp4" type="video/mp4">
+<video id="video" autoplay muted style="opacity: 0;"><source src="images/Seeing Things.mp4" type="video/mp4">
     </video>
 
 
@@ -263,7 +262,7 @@ a:link {
 <div onmouseover="document.getElementById('rotate').play()" onmouseout="document.getElementById('rotate').pause()" id='asterix'>*</div>
 
 
-<div id='leftcopyright'>Code partially and music fully copyrighted by Harry Van Ness & Daryosh Karimi © 2022<br>(Full proposal available on request: SeeingThings@gmail.com)<div>
+<div id='leftcopyright'>Code partially and music fully copyrighted by Harry Van Ness & Daryosh Karimi © 2022<br>(Full proposal available on request: SeeingThingsProject@gmail.com)<div>
 
 <video id="rotate" autoplay="autoplay" loop="true"><source src="images/asterix.mp4" type="video/mp4"></video> 
 
